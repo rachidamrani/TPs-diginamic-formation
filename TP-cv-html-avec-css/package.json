@@ -1,0 +1,15 @@
+{
+  "name": "html-accessibility-with-css",
+  "version": "1.0.0",
+  "description": "Pour visualiser le CV il suffit de vous rendez dans le dossier src puis ouvrir le fichier index.html.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "sass src/assets/scss/styles.scss src/assets/css/main.css"
+  },
+  "keywords": [],
+  "author": "Rachid AMRANI ALAOUI",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  }
+}

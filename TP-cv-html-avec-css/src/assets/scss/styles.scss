@@ -1,0 +1,83 @@
+@import "utils";
+@import "fonts";
+@import "colors";
+@import "animations";
+@import "mixins";
+
+@each $class in $classes-list {
+  .#{$class} {
+    @include card();
+  }
+}
+
+body {
+  padding: $default-spacing;
+  background-color: #e8e8e8;
+  position: relative;
+  font-family: Lato;
+  color: $dark;
+}
+
+header {
+  @include display-flex("column");
+  @include card();
+  text-align: center;
+
+  h1 {
+    animation: bounce 3s ease-in-out infinite;
+    color: $primary;
+  }
+
+  img {
+    border-radius: 50%;
+    max-width: 50%;
+  }
+
+  .contact_links {
+    @include display-flex();
+    width: 90%;
+    justify-content: space-around;
+    a {
+      display: inline-block;
+      i {
+        margin-right: $default-spacing * 0.3;
+      }
+    }
+    a {
+      color: blue;
+    }
+  }
+}
+
+.contact {
+  i {
+    margin-right: $default-spacing * 0.4;
+  }
+}
+
+.btn_contact {
+  @include btn();
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease-in;
+  }
+}
+
+.tech_skills {
+  strong {
+    display: inline-block;
+    margin-right: $default-spacing * 0.4;
+    margin-bottom: $default-spacing;
+    border: 1px solid $light;
+    padding: $default-spacing * 0.2;
+    border-radius: 3px;
+  }
+}
+
+// Media Queries for webstie responsiveness
+
+@import "media-queries";

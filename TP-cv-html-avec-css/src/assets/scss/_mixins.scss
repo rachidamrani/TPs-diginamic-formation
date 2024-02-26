@@ -1,0 +1,20 @@
+@mixin btn($backgroundClr: $primary) {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
+  background-color: $backgroundClr;
+  border: 0;
+  color: $light;
+  font-weight: 900;
+}
+
+@mixin card() {
+  border: 2px solid #ddd;
+  padding: $default-spacing;
+  margin-top: $default-spacing;
+  margin-bottom: $default-spacing;
+  background-color: $white;
+  border-radius: 5px;
+}

@@ -1,0 +1,27 @@
+@media screen and (min-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
+    .contact_links {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      a {
+        margin: $default-spacing * 0.4;
+      }
+    }
+
+    img {
+      max-width: 80%;
+      margin: auto;
+    }
+  }
+
+  .d-contact {
+    @include display-flex();
+    align-items: center;
+    justify-content: space-around;
+  }
+}

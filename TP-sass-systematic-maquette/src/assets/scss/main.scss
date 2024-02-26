@@ -1,0 +1,431 @@
+@import "normalize.scss";
+@import "fonts";
+
+$colors: (
+  "primary": #e84f7f,
+  "secondary": #006488,
+  "white": #fff,
+  "light": #e8e8e8,
+  "lightgray": #ddd,
+  "dark": #26272a,
+  "color-ui-1": #7e9cd2,
+  "color-ui-2": #6f2647,
+  "color-ui-3": #016bb4,
+  "color-ui-4": #0a4182,
+  "color-ui-5": #0c4fa0,
+  "color-ui-6": #056087,
+);
+
+@mixin d-flex() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin btn($bgClor) {
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: $bgClor;
+  border-color: map-get($colors, "primary");
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+
+  &:hover {
+    background-color: darken($bgClor, 6);
+  }
+}
+
+@mixin tag($bgClr) {
+  padding: 0.3rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 400;
+  background: $bgClr;
+  color: map-get($colors, "white");
+}
+
+body {
+  font-family: "Poppins";
+}
+
+header {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  background-color: map-get($colors, "white");
+  max-height: 140px;
+  padding: 1rem;
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 12rem;
+    }
+    .logo_title {
+      font-size: 0.67rem;
+      width: 12rem;
+      text-align: center;
+      color: map-get($colors, "secondary");
+    }
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    [alt*="rechercher"] {
+      width: 1.4rem;
+    }
+
+    [alt*="icons"] {
+      width: 8rem;
+    }
+
+    .signup {
+      @include btn(map-get($colors, "primary"));
+    }
+
+    .fa-solid {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.hero_image {
+  background: url("../images/banniere.jpg") no-repeat center;
+  height: 350px;
+}
+
+main {
+  width: 1100px;
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: 70% 30%;
+
+  .event_container {
+    padding: 1rem;
+    border: 1px solid map-get($colors, "lightgray");
+    border-left: 4px solid map-get($colors, "secondary");
+
+    h2 {
+      color: map-get($colors, "secondary");
+      display: inline;
+    }
+
+    span {
+      display: block;
+    }
+
+    & > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      line-height: 2.3;
+
+      .event_infos_left,
+      .event_info_right {
+        padding: 1rem 0;
+        strong {
+          color: map-get($colors, "secondary");
+        }
+      }
+
+      em {
+        color: gray;
+        font-size: 0.8rem;
+      }
+
+      .more_info {
+        @include btn(map-get($colors, "primary"));
+        margin-top: 0.5rem;
+        display: block;
+      }
+    }
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid map-get($colors, "light");
+    margin: 1em 0;
+    padding: 0;
+  }
+}
+
+.left_section {
+  padding: 0rem 1rem;
+  border-right: 1px solid map-get($colors, "lightgray");
+
+  h3 {
+    color: map-get($colors, "secondary");
+  }
+
+  .tag {
+    @include tag(map-get($colors, "secondary"));
+    display: inline-block;
+  }
+
+  .first_paragraph,
+  .second_paragraph {
+    text-align: justify;
+    margin: 1.7rem 0;
+  }
+
+  .second_paragraph {
+    strong {
+      color: map-get($colors, "primary");
+    }
+  }
+
+  em {
+    color: map-get($colors, "primary");
+  }
+
+  .inscription {
+    background-image: url("../images/Fond_rose.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    img {
+      height: 150px;
+    }
+
+    p {
+      width: 400px;
+      color: map-get($colors, "light");
+    }
+
+    h2 {
+      color: map-get($colors, "white");
+    }
+  }
+
+  .btn_inscription {
+    @include btn(map-get($colors, "white"));
+    color: map-get($colors, "primary");
+    border-radius: 30px;
+    padding: 8px 24px;
+    font-weight: bolder;
+  }
+
+  .share {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    strong {
+      color: map-get($colors, "secondary");
+    }
+
+    img {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.right_section {
+  padding: 0 1.5rem;
+  h3 {
+    color: map-get($colors, "secondary");
+    margin: 0;
+  }
+
+  .mois {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .event {
+    border-top: 1px solid map-get($colors, "light");
+    border-right: 1px solid map-get($colors, "light");
+    border-bottom: 1px solid map-get($colors, "light");
+
+    padding: 0rem 0.8rem;
+    margin: 1rem 0;
+
+    h4 {
+      margin: 0;
+      padding: 0.5rem 0;
+      color: map-get($colors, "secondary");
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .event:nth-child(1) {
+    border-left: 4px solid map-get($colors, "secondary");
+  }
+
+  .event:nth-child(2) {
+    border-left: 4px solid map-get($colors, "color-ui-1");
+  }
+
+  .event:nth-child(3) {
+    border-left: 4px solid map-get($colors, "color-ui-2");
+  }
+
+  .event:nth-child(4) {
+    border-left: 4px solid map-get($colors, "color-ui-3");
+  }
+
+  .hubs_challenges {
+    span {
+      display: block;
+      margin: 0.6rem 0;
+      font-size: 0.7rem;
+      width: fit-content;
+    }
+
+    .tag:nth-child(3) {
+      @include tag(map-get($colors, "color-ui-1"));
+    }
+
+    .tag:nth-child(4) {
+      @include tag(map-get($colors, "color-ui-3"));
+    }
+
+    .tag:nth-child(5) {
+      @include tag(map-get($colors, "color-ui-4"));
+    }
+
+    .tag:nth-child(6) {
+      @include tag(map-get($colors, "color-ui-5"));
+    }
+
+    .tag:nth-child(7) {
+      @include tag(map-get($colors, "color-ui-6"));
+    }
+
+    .tag:nth-child(8) {
+      @include tag(lighten(map-get($colors, "color-ui-6"), 5));
+    }
+
+    .tag:nth-child(9) {
+      @include tag(map-get($colors, "primary"));
+    }
+
+    .tag:nth-child(10) {
+      @include tag(map-get($colors, "color-ui-2"));
+    }
+
+    .tag:nth-child(11) {
+      @include tag(lighten(map-get($colors, "color-ui-2"), 5));
+    }
+  }
+}
+
+footer {
+  padding: 1rem;
+  background-color: map-get($colors, "dark");
+  color: map-get($colors, "light");
+
+  .container {
+    width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+    border-bottom: 1px solid map-get($colors, "lightgray");
+
+    margin-bottom: 1rem;
+
+    h4 {
+      font-size: 0.8rem;
+    }
+
+    input {
+      border: 0;
+      padding: 0.3rem 0.6rem;
+      background-color: map-get($colors, "dark");
+      color: map-get($colors, "light");
+      border-bottom: 2px solid map-get($colors, "primary");
+
+      &::placeholder {
+        color: map-get($colors, "light");
+        opacity: 0.9;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .contact-form {
+      @include d-flex();
+      justify-content: space-between;
+      gap: 10px;
+
+      margin: 1rem 0;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      button {
+        cursor: pointer;
+        outline: 0;
+        color: #fff;
+        background-color: map-get($colors, "primary");
+        border-color: map-get($colors, "primary");
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        border: 1px solid transparent;
+        padding: 6px 12px;
+        font-size: 1rem;
+        border-radius: 3rem;
+        width: 180px;
+
+        &:hover {
+          background-color: darken(map-get($colors, "primary"), 6);
+        }
+      }
+    }
+
+    .follow-us {
+      @include d-flex();
+      justify-content: start;
+
+      img {
+        width: 8rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .copyright {
+    @include d-flex();
+    justify-content: center;
+    gap: 20px;
+
+    strong {
+      color: map-get($colors, "secondary");
+    }
+
+    .footer_menu {
+      padding: 1rem 0;
+      a {
+        color: map-get($colors, "secondary");
+        margin: 0 0.4rem;
+        text-decoration: none;
+      }
+    }
+  }
+}
