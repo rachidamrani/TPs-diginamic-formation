@@ -1,0 +1,32 @@
+@mixin d-flex() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin btn($bgClor) {
+  cursor: pointer;
+  outline: 0;
+  color: #fff;
+  background-color: $bgClor;
+  border-color: map-get($colors, "primary");
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+
+  &:hover {
+    background-color: darken($bgClor, 6);
+  }
+}
+
+@mixin tag($bgClr) {
+  padding: 0.3rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 400;
+  background: $bgClr;
+  color: map-get($colors, "white");
+}

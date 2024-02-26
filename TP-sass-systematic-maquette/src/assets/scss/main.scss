@@ -1,53 +1,8 @@
 @import "normalize.scss";
+
 @import "fonts";
-
-$colors: (
-  "primary": #e84f7f,
-  "secondary": #006488,
-  "white": #fff,
-  "light": #e8e8e8,
-  "lightgray": #ddd,
-  "dark": #26272a,
-  "color-ui-1": #7e9cd2,
-  "color-ui-2": #6f2647,
-  "color-ui-3": #016bb4,
-  "color-ui-4": #0a4182,
-  "color-ui-5": #0c4fa0,
-  "color-ui-6": #056087,
-);
-
-@mixin d-flex() {
-  display: flex;
-  align-items: center;
-}
-
-@mixin btn($bgClor) {
-  cursor: pointer;
-  outline: 0;
-  color: #fff;
-  background-color: $bgClor;
-  border-color: map-get($colors, "primary");
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-  border: 1px solid transparent;
-  padding: 6px 12px;
-  font-size: 1rem;
-  border-radius: 0.25rem;
-
-  &:hover {
-    background-color: darken($bgClor, 6);
-  }
-}
-
-@mixin tag($bgClr) {
-  padding: 0.3rem 0.4rem;
-  border-radius: 3px;
-  font-weight: 400;
-  background: $bgClr;
-  color: map-get($colors, "white");
-}
+@import "colors";
+@import "mixins";
 
 body {
   font-family: "Poppins";
@@ -334,7 +289,7 @@ footer {
   padding: 1rem;
   background-color: map-get($colors, "dark");
   color: map-get($colors, "light");
-
+  position: relative;
   .container {
     width: 1100px;
     margin: auto;
@@ -427,5 +382,17 @@ footer {
         text-decoration: none;
       }
     }
+  }
+
+  .up-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: map-get($colors, "primary");
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
 }
