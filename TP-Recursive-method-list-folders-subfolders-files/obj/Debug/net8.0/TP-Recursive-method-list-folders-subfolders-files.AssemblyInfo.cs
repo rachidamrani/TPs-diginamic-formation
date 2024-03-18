@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP-Recursive-method-list-folders-subfolders-files")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c8e85ff9646016926d4c85985f14b0074a7ded9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3d5214e4c553dfda0f700c71a06447092515050")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP-Recursive-method-list-folders-subfolders-files")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP-Recursive-method-list-folders-subfolders-files")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
